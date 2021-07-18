@@ -1,0 +1,102 @@
+$darkblue : #221A4D;
+$tricolor: #2A356D;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    height:100vh;
+    overflow:hidden;
+}
+.App {
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color: $darkblue;
+  }
+.up{
+    z-index: 9999;
+}
+.timer{
+    font-family: 'Roboto' !important; 
+    font-weight: 900 !important;
+    font-size: 30px;
+}
+.value{
+    font-family: 'Roboto' !important; 
+    font-weight: 900 !important;
+    font-size: 50px;
+}
+.empezando{
+    font-size: 50px;
+}
+.empezando::after{
+    content:"";
+    animation: 2s puntos linear infinite;
+}
+.logoF{
+    animation: 1s aumento ease infinite alternate;
+}
+@keyframes aumento{
+    0%{
+        transform: scale(.95);
+    }
+    100%{
+        transform: scale(1.05);
+    }
+}
+@keyframes puntos{
+    0%{
+        content:"";
+    }
+    33%{
+        content:".";
+    }
+    66%{
+        content:"..";
+    }
+    100%{
+        content:"...";
+    }
+}
+
+@function randomNum($min, $max) {
+    $rand: random();
+    $randomNum: $min + floor($rand * (($max - $min) + 1));
+  
+    @return $randomNum;
+  }
+@for $i from 0 through 25{ 
+    $x :random(100) + vh;
+    $y:random(100) + vw;
+    $x2 :random(100) + vh;
+    $y2:random(100) + vw;
+    span.triangle:nth-child(#{$i}){
+        width: 0;
+        height: 0;
+        border-top: (random(50) + 50) + px solid transparent;
+        border-right: (random(100) + 100) + px solid $tricolor;
+        border-bottom: (random(50) + 50) + px solid transparent;
+        opacity: 0.5;
+        position: absolute;
+        top: $x;
+        left: $y;
+        transform: rotate(random(360) + deg);
+        animation: 100s move#{$i} infinite linear alternate;
+    }
+    @keyframes move#{$i} {
+        0%{
+            top: $x;
+            left: $y;
+            transform: rotate(random(360) + deg);
+        }
+        100%{
+            top: $x2;
+            left: $y2;
+            transform: rotate(random(360) + deg);
+        }
+    }
+
+}
+
+  
+  
