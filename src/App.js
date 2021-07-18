@@ -51,7 +51,7 @@ function App() {
             <Col sm={6} className="d-flex align-items-center justify-content-center">
             <CountdownCircleTimer
               isPlaying
-              duration={90}
+              duration={300}
               size="400"
               trailColor="$FFFFFF"
               colors={[["#FEBF1A"],["#F59D1D"],["#F37A1E"]]}
