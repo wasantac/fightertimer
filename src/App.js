@@ -73,7 +73,7 @@ function App() {
           <Route exact path="/outro">
             <Col>
             <img src={logo} alt="logo" width="auto" height="700rem" className="logoF"></img>
-            <h1 className="final">Gracias por ver!</h1>
+            <h1 className="final">¡Ya vete del ciber!</h1>
             </Col>
 
           </Route>
