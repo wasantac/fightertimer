@@ -1,9 +1,32 @@
 $darkblue : #221A4D;
 $tricolor: #2A356D;
+$naranja : #F37A1E;
+$mitad : #F59D1D;
+$amarillo: #FEBF1A;
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body{
     height:100vh;
     overflow:hidden;
+}
+.final{
+    color : $amarillo;
+    animation: 3s textfinal ease infinite alternate;
+    z-index: 99;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%)
+}
+@keyframes textfinal{
+    0%{
+        color : $amarillo;
+    }
+    50%{
+        color : $mitad;
+    }
+    100%{
+        color: $naranja;
+    }
 }
 .App {
     text-align: center;
