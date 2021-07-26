@@ -3,11 +3,33 @@ $tricolor: #2A356D;
 $naranja : #F37A1E;
 $mitad : #F59D1D;
 $amarillo: #FEBF1A;
+$darkred: #570602;
+$lightred: #db4040;
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body{
     height:100vh;
-    overflow:hidden;
+    
 }
+@media screen and (max-width:500px){
+    .circulo{
+        transform: scale(0.6);
+    }
+}
+.wrapper{
+    background-color: $darkblue;
+    overflow:hidden;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+.wrapper-gg{
+    background-color: $darkred;
+    overflow:hidden;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
 .final{
     color : $amarillo;
     animation: 3s textfinal ease infinite alternate;
@@ -34,7 +56,6 @@ body{
     display: flex;
     align-items: center;
     justify-content:center;
-    background-color: $darkblue;
   }
 .up{
     z-index: 9999;
@@ -64,7 +85,7 @@ body{
         transform: scale(.95);
     }
     100%{
-        transform: scale(1.05);
+        transform: scale(1.02);
     }
 }
 @keyframes puntos{
@@ -88,6 +109,29 @@ body{
   
     @return $randomNum;
   }
+span.square{
+    background-color: $lightred;
+    width: 70%;
+    height: 100%;
+    border-right: (random(100) + 100) + px solid $lightred;
+    opacity: 0.5;
+    position: absolute;
+    transform: skew(20deg);
+    animation: leftright 50s ease infinite alternate; 
+}
+@keyframes leftright {
+    0%{
+        left: 40%;
+        transform: skew(-20deg);
+    }
+    50%{
+        transform: skew(20deg);
+    }
+    100%{
+        left: 60%;
+        transform: skew(-20deg);
+    }
+}
 @for $i from 0 through 25{ 
     $x :random(100) + vh;
     $y:random(100) + vw;
