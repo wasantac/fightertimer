@@ -10,6 +10,46 @@ body{
     height:100vh;
     
 }
+.shine{
+    overflow:hidden;
+}
+.shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100px;
+    width: 70px;
+    height: 100%;
+    background: rgba(255,255,255, 0.3);
+    transform: skewX(-30deg);
+    animation-name: slide;
+    animation-duration: 10s;
+    animation-timing-function: ease;
+    animation-delay: .3s;
+    animation-iteration-count: infinite;
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0.13) 0%,
+        rgba(255, 255, 255, 0.13) 77%,
+        rgba(255, 255, 255, 0.5) 92%,
+        rgba(255, 255, 255, 0.0) 100%
+      );
+}
+
+@keyframes slide {
+    0% {
+      left: -100;
+      top: 0;
+    }
+    30%{
+        left: 100%;
+        top: 0;
+    }
+    100% {
+      left: 100%;
+      top: 0;
+    }
+  }
 @media screen and (max-width:500px){
     .circulo{
         transform: scale(0.6);

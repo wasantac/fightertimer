@@ -9,6 +9,7 @@ import {
 import Timer from './components/Timer';
 import Outro from './components/Outro';
 import Gamefondo from './components/Gamefondo';
+import Shinelogo from './components/Shinelogo';
 function App() {
   const [game,setGame] = useState("db");
 
@@ -18,17 +19,20 @@ function App() {
 
   return (
     <div className="App">
-      <Gamefondo game={game}/>
+      
       <Router>
         <Switch>
           <Route exact path="/">
+            <Gamefondo game={game}/>
             <Timer logo={logo} setgame={handleGame} game={game}></Timer>
           </Route>
           <Route exact path="/outro">
+          <Gamefondo game={game}/>
             <Outro logo={logo} setgame={handleGame}></Outro>
-
           </Route>
-
+          <Route exact path="/logo">
+            <Shinelogo logo={logo}></Shinelogo>
+          </Route>  
         </Switch>
 
       </Router>

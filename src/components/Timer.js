@@ -11,7 +11,7 @@ const renderTime = ({ remainingTime }) => {
     if (remainingTime === 0) {
       return <h1 className="timer empezando">Empezando</h1>;
     }
-    <i class="fa fa-quote-left" aria-hidden="true"></i> 
+    <i className="fa fa-quote-left" aria-hidden="true"></i> 
     let minutes = Math.floor(remainingTime / 60)
     let seconds = remainingTime % 60
   
