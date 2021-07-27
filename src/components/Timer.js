@@ -37,17 +37,28 @@ const renderTime = ({ remainingTime }) => {
       );
     }
   };
-const Timer = ({logo,game}) => {
+const Timer = ({logo,game,setgame}) => {
     let query = useQuery();
     const [load,setLoad] = useState(false);
     useEffect(() => {
         if(!load){
             if(query.get("game")){
-                game(query.get("game"))
+              setgame(query.get("game"))
             }
             setLoad(true);
         }
-    },[load,query,game])
+    },[load,query,setgame])
+    let selectColor = (g) => {
+      console.log(g);
+      switch(g){
+        case 'db':
+          return "#FEBF1A";
+        case 'gg':
+          return '#FFF';
+        default:
+          return '#FFF';
+      }
+    }
     return (
         <div>
             <Container className="up bg-transparent">
@@ -62,7 +73,7 @@ const Timer = ({logo,game}) => {
                 duration={300}
                 size="400"
                 trailColor="$FFFFFF"
-                colors={[["#FEBF1A"],["#F59D1D"],["#F37A1E"]]}
+                colors={selectColor(game)}
                 onComplete={() => [true,6000000]}
               >
                 {renderTime}

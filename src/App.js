@@ -8,35 +8,24 @@ import {
 } from "react-router-dom";
 import Timer from './components/Timer';
 import Outro from './components/Outro';
+import Gamefondo from './components/Gamefondo';
 function App() {
   const [game,setGame] = useState("db");
-  let triangles = [];
 
   let handleGame = (g) => {
     setGame(g);  
   }
-  for(let i = 0; i < 25 ; i++){
-    triangles.push(<span className="triangle" key={i}></span>)
-  }
+
   return (
     <div className="App">
-      {game === "db" ?       
-      <div className="wrapper">
-      {triangles.map(item =>{ 
-        return item
-      })} 
-      </div>   :
-            <div className="wrapper-gg">
-              <span className="square"></span>
-              <span className="square"></span>
-            </div>   }       
+      <Gamefondo game={game}/>
       <Router>
         <Switch>
           <Route exact path="/">
-            <Timer logo={logo} game={handleGame}></Timer>
+            <Timer logo={logo} setgame={handleGame} game={game}></Timer>
           </Route>
           <Route exact path="/outro">
-            <Outro logo={logo}></Outro>
+            <Outro logo={logo} setgame={handleGame}></Outro>
 
           </Route>
 
