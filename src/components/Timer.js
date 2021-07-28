@@ -63,15 +63,15 @@ const Timer = ({logo,game,setgame}) => {
         <div>
             <Container className="up bg-transparent">
             <Row>
-              <Col sm={6}>
-                <img src={logo} alt="logo" width="auto" height="700rem" className="logoF img-fluid"></img>
+              <Col sm={6} md={6}>
+                <img src={logo} alt="logo" width="auto" height="900rem" className="logoF img-fluid"></img>
               </Col>
-              <Col sm={6} className="d-flex align-items-center justify-content-center">
+              <Col sm={6} md={6} className="d-flex align-items-center justify-content-center">
               <div className="circulo">
               <CountdownCircleTimer
                 isPlaying
                 duration={300}
-                size="400"
+                size="350"
                 trailColor="$FFFFFF"
                 colors={selectColor(game)}
                 onComplete={() => [true,6000000]}
