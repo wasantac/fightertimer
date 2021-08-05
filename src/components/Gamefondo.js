@@ -1,29 +1,23 @@
 import React from 'react';
-
-const Gamefondo = ({game}) => { 
-    let triangles = [];
-    for(let i = 0; i < 25 ; i++){
-      triangles.push(<span className="triangle" key={i}></span>)
-    }
+import goku from '../assets/goku.png'
+import sol from '../assets/sol.png';
+import ryu from '../assets/ryu.png';
+const Gamefondo = ({game,outro}) => { 
     let renderSwitch = () => {
-        switch(game){
-            case 'db':{
-                return      <div className="wrapper">
-                {triangles.map(item =>{ 
-                  return item
-                })} 
-                </div> ;
-            }
-            case 'gg':{
-                return <div className="wrapper-gg">
-                <span className="square"></span>
-                <span className="square"></span>
-                    </div> ;
-            }
-            default:{
-                return ""
-            }
-        };
+        if(outro){
+            return      <div className="wrapper">
+            <img src={goku} alt="" className="character character-out"></img>
+            <img src={sol} alt="" className="character character-out"></img>
+            <img src={ryu} alt="" className="character character-out"></img>
+        </div> ;
+        }
+        else{
+            return      <div className="wrapper">
+            <img src={goku} alt="" className="character"></img>
+            <img src={sol} alt="" className="character"></img>
+            <img src={ryu} alt="" className="character"></img>
+        </div> ;
+        }
     }
     return (
         <React.Fragment>

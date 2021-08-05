@@ -9,7 +9,10 @@ $lightred: #220200;
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body{
     height:100vh;
-    
+    overflow:hidden;
+}
+.App{
+    overflow:hidden;
 }
 .shine{
     overflow:hidden;
@@ -17,7 +20,7 @@ body{
 .shine::before {
     content: '';
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: -100px;
     width: 70px;
     height: 30%;
@@ -30,25 +33,30 @@ body{
     animation-iteration-count: infinite;
     background: linear-gradient(
         to right, 
-        rgba(255, 255, 255, 0.13) 0%,
+        rgba(255, 255, 255, 0.425) 0%,
         rgba(255, 255, 255, 0.13) 77%,
         rgba(255, 255, 255, 0.5) 92%,
         rgba(255, 255, 255, 0.0) 100%
       );
 }
-
+.logoshine{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
+}
 @keyframes slide {
     0% {
       left: -1000px;
-      top: 50%;
+      bottom: 0%;
     }
     30%{
         left: 2000px;
-        top: 50%;
+        bottom: 0%;
     }
     100% {
       left: 2000px;
-      top: 50%;
+      bottom: 0%;
     }
   }
 @media screen and (max-width:500px){
@@ -58,6 +66,7 @@ body{
 }
 .wrapper{
     background-color: $darkblue;
+    background-image: url("./fondo.png");
     overflow:hidden;
     height: 100%;
     width: 100%;
@@ -105,11 +114,95 @@ body{
     font-family: 'Roboto' !important; 
     font-weight: 900 !important;
     font-size: 30px;
+    color : white;
+    text-shadow: 0 0 10px #000;
+}
+.character{
+    opacity: 0.5;
+    position: absolute;
+    left: 29%;
+    height: 600px;
+    width:auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@for $i from 1 through 3{
+
+    @if $i == 1{
+        @keyframes aparecer#{$i}{
+            0%{
+                opacity: 0;
+            }
+            5%{
+                opacity: 0.5;
+            }
+            25%{
+                opacity: 0.5;
+            }
+            30%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+    }
+    @else if $i == 2{
+        @keyframes aparecer#{$i}{
+            0%{
+                opacity: 0;
+            }
+            30%{
+                opacity: 0;
+            }
+            35%{
+                opacity: 0.5;
+            }
+            55%{
+                opacity: 0.5;
+            }
+            60%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+    }
+    @else if $i == 3{
+        @keyframes aparecer#{$i}{
+            0%{
+                opacity: 0;
+            }
+            60%{
+                opacity: 0;
+            }
+            65%{
+                opacity: 0.5;
+            }
+            95%{
+                opacity: 0.5;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+    }
+    img.character:nth-child(#{$i}){
+        animation: 20s aparecer#{$i} ease infinite;
+    }
+
+}
+.character-out{
+    left : 50%
 }
 .value{
     font-family: 'Roboto' !important; 
     font-weight: 900 !important;
     font-size: 50px;
+    color : white;
+    text-shadow: 0 0 10px #000;
 }
 .empezando{
     font-size: 50px;

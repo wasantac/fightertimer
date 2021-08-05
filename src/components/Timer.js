@@ -52,7 +52,7 @@ const Timer = ({logo,game,setgame}) => {
       console.log(g);
       switch(g){
         case 'db':
-          return "#FEBF1A";
+          return "#000";
         case 'gg':
           return '#FFF';
         default:

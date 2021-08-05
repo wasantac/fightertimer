@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import logo from './logo.png';
+import logo from './593logo.png';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -23,11 +23,11 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Gamefondo game={game}/>
+            <Gamefondo game={game} outro={false}/>
             <Timer logo={logo} setgame={handleGame} game={game}></Timer>
           </Route>
           <Route exact path="/outro">
-          <Gamefondo game={game}/>
+          <Gamefondo game={game} outro={true}/>
             <Outro logo={logo} setgame={handleGame}></Outro>
           </Route>
           <Route exact path="/logo">
