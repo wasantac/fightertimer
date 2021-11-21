@@ -50,17 +50,6 @@ const Timer = ({ logo, game, setgame }) => {
       setLoad(true);
     }
   }, [load, query, setgame])
-  let selectColor = (g) => {
-    console.log(g);
-    switch (g) {
-      case 'db':
-        return "#000";
-      case 'gg':
-        return '#FFF';
-      default:
-        return '#FFF';
-    }
-  }
   return (
     <div className="w-100 h-100 d-flex justify-content-center align-items-center fondo-div ">
       <Particles></Particles>
@@ -76,7 +65,7 @@ const Timer = ({ logo, game, setgame }) => {
                 duration={300}
                 size="350"
                 trailColor="$FFFFFF"
-                colors={selectColor(game)}
+                colors={"#ef233c"}
                 onComplete={() => [true, 6000000]}
               >
                 {renderTime}
