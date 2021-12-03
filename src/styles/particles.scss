@@ -1,0 +1,47 @@
+$red: #ef233c;
+.circle {
+  position: absolute;
+  background-color: $red;
+  color: $red;
+  color: $red;
+  width: 100px;
+  height: 2px;
+}
+
+.particles-bg {
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@for $i from 0 through 51 {
+  $x1: (random(100)) * 1%;
+  $x2: (random(100)) * 1%;
+  @keyframes circle#{$i} {
+    0% {
+      left: -1000px;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  .circle:nth-child(#{$i}) {
+    top: $x1;
+    left: -1000px;
+    position: absolute;
+    animation-name: circle#{$i};
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    @if $i < 5 {
+      animation-duration: ($i + 51) * 0.3s;
+    } @else {
+      animation-duration: $i * 0.3s;
+    }
+
+    opacity: 0.5;
+  }
+}

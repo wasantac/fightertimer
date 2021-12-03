@@ -1,0 +1,16 @@
+$fondo: #2b2d42;
+.fondo-gogo {
+  background-color: $fondo;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.img-gogo {
+  position: absolute;
+  width: auto;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
