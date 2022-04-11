@@ -1,4 +1,3 @@
-$darkblue: #221a4d;
 $tricolor: #2a356d;
 $naranja: #f37a1e;
 $mitad: #f59d1d;
@@ -6,296 +5,296 @@ $amarillo: #febf1a;
 $darkred: #a73030;
 $lightred: #220200;
 
-$fondo: #2b2d42;
+$white-light-blue: #8ecae6;
+$light-blue: #219ebc;
+$darkblue: #023047;
+$yellow: #ffb703;
+$orange: #fb8500;
+
+.fondo-div {
+    background-color: $darkblue;
+}
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body {
-  height: 100vh;
-  overflow: hidden;
+    height: 100vh;
+    overflow: hidden;
 }
 .App {
-  overflow: hidden;
+    overflow: hidden;
 }
 .shine {
-  overflow: hidden;
+    overflow: hidden;
 }
 .shine::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: -100px;
-  width: 70px;
-  height: 20%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: skewX(-30deg);
-  animation-name: slide;
-  animation-duration: 5s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.425) 0%,
-    rgba(255, 255, 255, 0.13) 77%,
-    rgba(255, 255, 255, 0.5) 92%,
-    rgba(255, 255, 255, 0) 100%
-  );
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -100px;
+    width: 70px;
+    height: 20%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-30deg);
+    animation-name: slide;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.425) 0%,
+        rgba(255, 255, 255, 0.13) 77%,
+        rgba(255, 255, 255, 0.5) 92%,
+        rgba(255, 255, 255, 0) 100%
+    );
 }
 .logoshine {
-  position: absolute;
-  bottom: 0%;
-  left: 50%;
-  transform: translate(-50%);
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
 }
 @keyframes slide {
-  0% {
-    left: -100px;
-    bottom: 0%;
-  }
-  30% {
-    left: 2000px;
-    bottom: 0%;
-  }
-  100% {
-    left: 2000px;
-    bottom: 0%;
-  }
+    0% {
+        left: -100px;
+        bottom: 0%;
+    }
+    30% {
+        left: 2000px;
+        bottom: 0%;
+    }
+    100% {
+        left: 2000px;
+        bottom: 0%;
+    }
 }
-@media screen and (max-width: 500px) {
-  .circulo {
-    transform: scale(0.6);
-  }
-}
+
 .wrapper {
-  background-color: $darkblue;
-  background-image: url("./fondo.png");
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  position: fixed;
+    background-color: $darkblue;
+    background-image: url("./fondo.png");
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: fixed;
 }
 .wrapper-gg {
-  background-color: $darkred;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  position: fixed;
+    background-color: $darkred;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: fixed;
 }
 
 .final {
-  color: $amarillo;
-  animation: 3s textfinal ease infinite alternate;
-  z-index: 99;
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translateX(-50%);
+    color: $amarillo;
+    animation: 3s textfinal ease infinite alternate;
+    z-index: 99;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 @keyframes textfinal {
-  0% {
-    color: $amarillo;
-  }
-  50% {
-    color: $mitad;
-  }
-  100% {
-    color: $naranja;
-  }
+    0% {
+        color: $amarillo;
+    }
+    50% {
+        color: $mitad;
+    }
+    100% {
+        color: $naranja;
+    }
 }
 .App {
-  text-align: center;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .up {
-  z-index: 9999;
+    z-index: 9999;
 }
 .timer {
-  font-family: "Roboto" !important;
-  font-weight: 900 !important;
-  font-size: 30px;
-  color: white;
-  text-shadow: 0 0 10px #000;
+    font-family: "Roboto" !important;
+    font-weight: 900 !important;
+    font-size: 30px;
+    color: white;
+    text-shadow: 0 0 10px #000;
 }
 .character {
-  opacity: 0.5;
-  position: absolute;
-  left: 29%;
-  height: 600px;
-  width: auto;
-  top: 50%;
-  transform: translate(-50%, -50%);
+    opacity: 0.5;
+    position: absolute;
+    left: 29%;
+    height: 600px;
+    width: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @for $i from 1 through 3 {
-  @if $i == 1 {
-    @keyframes aparecer#{$i} {
-      0% {
-        opacity: 0;
-      }
-      5% {
-        opacity: 0.5;
-      }
-      25% {
-        opacity: 0.5;
-      }
-      30% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 0;
-      }
+    @if $i == 1 {
+        @keyframes aparecer#{$i} {
+            0% {
+                opacity: 0;
+            }
+            5% {
+                opacity: 0.5;
+            }
+            25% {
+                opacity: 0.5;
+            }
+            30% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    } @else if $i == 2 {
+        @keyframes aparecer#{$i} {
+            0% {
+                opacity: 0;
+            }
+            30% {
+                opacity: 0;
+            }
+            35% {
+                opacity: 0.5;
+            }
+            55% {
+                opacity: 0.5;
+            }
+            60% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    } @else if $i == 3 {
+        @keyframes aparecer#{$i} {
+            0% {
+                opacity: 0;
+            }
+            60% {
+                opacity: 0;
+            }
+            65% {
+                opacity: 0.5;
+            }
+            95% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
     }
-  } @else if $i == 2 {
-    @keyframes aparecer#{$i} {
-      0% {
-        opacity: 0;
-      }
-      30% {
-        opacity: 0;
-      }
-      35% {
-        opacity: 0.5;
-      }
-      55% {
-        opacity: 0.5;
-      }
-      60% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 0;
-      }
+    img.character:nth-child(#{$i}) {
+        animation: 20s aparecer#{$i} ease infinite;
     }
-  } @else if $i == 3 {
-    @keyframes aparecer#{$i} {
-      0% {
-        opacity: 0;
-      }
-      60% {
-        opacity: 0;
-      }
-      65% {
-        opacity: 0.5;
-      }
-      95% {
-        opacity: 0.5;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-  }
-  img.character:nth-child(#{$i}) {
-    animation: 20s aparecer#{$i} ease infinite;
-  }
 }
 .character-out {
-  left: 50%;
+    left: 50%;
 }
 .value {
-  font-family: "Roboto" !important;
-  font-weight: 900 !important;
-  font-size: 50px;
-  color: white;
-  text-shadow: 0 0 10px #000;
+    font-family: "Roboto" !important;
+    font-weight: 900 !important;
+    font-size: 50px;
+    color: white;
+    text-shadow: 0 0 10px #000;
 }
 .empezando {
-  font-size: 50px;
+    font-size: 50px;
 }
 .empezando::after {
-  content: "";
-  animation: 2s puntos linear infinite;
+    content: "";
+    animation: 2s puntos linear infinite;
 }
 .logoF {
-  animation: 1s aumento ease infinite alternate;
+    animation: 1s aumento ease infinite alternate;
 }
 @keyframes aumento {
-  0% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1.02);
-  }
+    0% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1.02);
+    }
 }
 @keyframes puntos {
-  0% {
-    content: "";
-  }
-  33% {
-    content: ".";
-  }
-  66% {
-    content: "..";
-  }
-  100% {
-    content: "...";
-  }
+    0% {
+        content: "";
+    }
+    33% {
+        content: ".";
+    }
+    66% {
+        content: "..";
+    }
+    100% {
+        content: "...";
+    }
 }
 
 @function randomNum($min, $max) {
-  $rand: random();
-  $randomNum: $min + floor($rand * (($max - $min) + 1));
+    $rand: random();
+    $randomNum: $min + floor($rand * (($max - $min) + 1));
 
-  @return $randomNum;
+    @return $randomNum;
 }
 span.square {
-  background-color: $lightred;
-  width: 70%;
-  height: 100%;
-  border-right: (random(100) + 100) + px solid $lightred;
-  opacity: 0.5;
-  position: absolute;
-  transform: skew(20deg);
-  animation: leftright 50s ease infinite alternate;
-}
-@keyframes leftright {
-  0% {
-    left: 40%;
-    transform: skew(-20deg);
-  }
-  50% {
-    transform: skew(20deg);
-  }
-  100% {
-    left: 60%;
-    transform: skew(-20deg);
-  }
-}
-@for $i from 0 through 25 {
-  $x: random(100) + vh;
-  $y: random(100) + vw;
-  $x2: random(100) + vh;
-  $y2: random(100) + vw;
-  span.triangle:nth-child(#{$i}) {
-    width: 0;
-    height: 0;
-    border-top: (random(50) + 50) + px solid transparent;
-    border-right: (random(100) + 100) + px solid $tricolor;
-    border-bottom: (random(50) + 50) + px solid transparent;
+    background-color: $lightred;
+    width: 70%;
+    height: 100%;
+    border-right: (random(100) + 100) + px solid $lightred;
     opacity: 0.5;
     position: absolute;
-    top: $x;
-    left: $y;
-    transform: rotate(random(360) + deg);
-    animation: 100s move#{$i} infinite linear alternate;
-  }
-  @keyframes move#{$i} {
+    transform: skew(20deg);
+    animation: leftright 50s ease infinite alternate;
+}
+@keyframes leftright {
     0% {
-      top: $x;
-      left: $y;
-      transform: rotate(random(360) + deg);
+        left: 40%;
+        transform: skew(-20deg);
+    }
+    50% {
+        transform: skew(20deg);
     }
     100% {
-      top: $x2;
-      left: $y2;
-      transform: rotate(random(360) + deg);
+        left: 60%;
+        transform: skew(-20deg);
     }
-  }
 }
-
-.fondo-div {
-  background-color: $fondo;
+@for $i from 0 through 25 {
+    $x: random(100) + vh;
+    $y: random(100) + vw;
+    $x2: random(100) + vh;
+    $y2: random(100) + vw;
+    span.triangle:nth-child(#{$i}) {
+        width: 0;
+        height: 0;
+        border-top: (random(50) + 50) + px solid transparent;
+        border-right: (random(100) + 100) + px solid $tricolor;
+        border-bottom: (random(50) + 50) + px solid transparent;
+        opacity: 0.5;
+        position: absolute;
+        top: $x;
+        left: $y;
+        transform: rotate(random(360) + deg);
+        animation: 100s move#{$i} infinite linear alternate;
+    }
+    @keyframes move#{$i} {
+        0% {
+            top: $x;
+            left: $y;
+            transform: rotate(random(360) + deg);
+        }
+        100% {
+            top: $x2;
+            left: $y2;
+            transform: rotate(random(360) + deg);
+        }
+    }
 }

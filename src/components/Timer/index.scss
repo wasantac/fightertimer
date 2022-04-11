@@ -1,0 +1,25 @@
+.live-text {
+    font: bold 20px sans-serif;
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    color: white;
+
+    span {
+        color: red;
+        padding-left: 5px;
+        animation: blink 1s ease infinite;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,47 +1,54 @@
 $red: #ef233c;
+
+$white-light-blue: #8ecae6;
+$light-blue: #219ebc;
+$darkblue: #023047;
+$yellow: #ffb703;
+$orange: #fb8500;
+
 .circle {
-  position: absolute;
-  background-color: $red;
-  color: $red;
-  color: $red;
-  width: 100px;
-  height: 2px;
+    position: absolute;
+    background-color: $light-blue;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 0) 0%, $light-blue 60%);
+    color: $light-blue;
+    width: 100px;
+    height: 2px;
 }
 
 .particles-bg {
-  width: 100vw;
-  height: 100vh;
-  background: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 @for $i from 0 through 51 {
-  $x1: (random(100)) * 1%;
-  $x2: (random(100)) * 1%;
-  @keyframes circle#{$i} {
-    0% {
-      left: -1000px;
-    }
-    100% {
-      left: 100%;
-    }
-  }
-
-  .circle:nth-child(#{$i}) {
-    top: $x1;
-    left: -1000px;
-    position: absolute;
-    animation-name: circle#{$i};
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    @if $i < 5 {
-      animation-duration: ($i + 51) * 0.3s;
-    } @else {
-      animation-duration: $i * 0.3s;
+    $x1: (random(100)) * 1%;
+    $x2: (random(100)) * 1%;
+    @keyframes circle#{$i} {
+        0% {
+            left: -1000px;
+        }
+        100% {
+            left: 100%;
+        }
     }
 
-    opacity: 0.5;
-  }
+    .circle:nth-child(#{$i}) {
+        top: $x1;
+        left: -1000px;
+        position: absolute;
+        animation-name: circle#{$i};
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        @if $i < 5 {
+            animation-duration: ($i + 51) * 0.3s;
+        } @else {
+            animation-duration: $i * 0.3s;
+        }
+
+        opacity: 0.5;
+    }
 }
