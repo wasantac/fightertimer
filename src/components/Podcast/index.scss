@@ -1,0 +1,25 @@
+$white-light-blue: #8ecae6;
+$light-blue: #219ebc;
+$darkblue: #023047;
+$yellow: #ffb703;
+$orange: #fb8500;
+.icono {
+    color: $yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icono-tam {
+        font-size: 20px;
+    }
+}
+
+.empty-block {
+    width: 300px;
+}
+
+.barra-iconos {
+    position: absolute;
+    bottom: 20px;
+    left: 150px;
+}

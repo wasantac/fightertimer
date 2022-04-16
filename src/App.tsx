@@ -7,6 +7,7 @@ import Timer from "./components/Timer";
 import Outro from "./components/Outro";
 import Shinelogo from "./components/Shinelogo";
 import JustBG from "./components/JustBG";
+import Podcast from "./components/Podcast";
 function App() {
     return (
         <div className="App">
@@ -27,6 +28,7 @@ function App() {
                         element={<Shinelogo logo={logo}></Shinelogo>}
                     />
                     <Route path="background" element={<JustBG></JustBG>} />
+                    <Route path="podcast" element={<Podcast></Podcast>} />
                 </Routes>
             </BrowserRouter>
         </div>
