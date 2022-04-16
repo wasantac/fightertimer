@@ -2,20 +2,22 @@ $white-light-blue: #8ecae6;
 $light-blue: #219ebc;
 $darkblue: #023047;
 $yellow: #ffb703;
-$orange: #fb8500;
+
+$tam: 20px;
 .icono {
     color: $yellow;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: $tam;
 
     .icono-tam {
-        font-size: 20px;
+        font-size: $tam + 20px;
     }
 }
 
 .empty-block {
-    width: 300px;
+    width: 400px;
 }
 
 .barra-iconos {
