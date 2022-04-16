@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Timer from "./components/Timer";
 import Outro from "./components/Outro";
 import Shinelogo from "./components/Shinelogo";
+import JustBG from "./components/JustBG";
 function App() {
     return (
         <div className="App">
@@ -25,6 +26,7 @@ function App() {
                         path="/logo"
                         element={<Shinelogo logo={logo}></Shinelogo>}
                     />
+                    <Route path="background" element={<JustBG></JustBG>} />
                 </Routes>
             </BrowserRouter>
         </div>
