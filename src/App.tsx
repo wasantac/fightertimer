@@ -8,6 +8,7 @@ import Outro from "./components/Outro";
 import Shinelogo from "./components/Shinelogo";
 import JustBG from "./components/JustBG";
 import Podcast from "./components/Podcast";
+import WaitTimer from "./components/WaitTimer";
 function App() {
     return (
         <div className="App">
@@ -29,6 +30,12 @@ function App() {
                     />
                     <Route path="background" element={<JustBG></JustBG>} />
                     <Route path="podcast" element={<Podcast></Podcast>} />
+                    <Route path="timer">
+                        <Route
+                            path=":seconds"
+                            element={<WaitTimer logo={logo}></WaitTimer>}
+                        ></Route>
+                    </Route>
                 </Routes>
             </BrowserRouter>
         </div>

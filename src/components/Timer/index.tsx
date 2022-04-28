@@ -7,10 +7,11 @@ import "./index.scss";
 type Props = {
     logo: string;
     seconds: number;
+    resume?: boolean;
 };
 
 const Timer: React.FC<Props> = (props) => {
-    const { logo, seconds } = props;
+    const { logo, seconds, resume } = props;
 
     return (
         <div className="w-100 h-100 d-flex justify-content-center align-items-center fondo-div ">
@@ -33,7 +34,7 @@ const Timer: React.FC<Props> = (props) => {
                         md={4}
                         className="d-flex align-items-center justify-content-center"
                     >
-                        <Counter seconds={seconds}></Counter>
+                        <Counter seconds={seconds} resume={resume}></Counter>
                     </Col>
                 </Row>
             </Container>

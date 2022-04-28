@@ -3,9 +3,15 @@ import { calculateTime } from "../../../utils/time";
 import "./index.scss";
 type Props = {
     seconds: number;
+    resume?: boolean;
 };
 
-const Loader = () => {
+type LoaderProps = {
+    resume?: boolean;
+};
+
+const Loader: React.FC<LoaderProps> = (props) => {
+    const { resume } = props;
     return (
         <div className="d-flex justify-content-center align-items-center wrapper-loader">
             <div className="loader">
@@ -16,7 +22,9 @@ const Loader = () => {
                 <div className="bar5"></div>
                 <div className="bar6"></div>
             </div>
-            <h1 className="text-white mx-2">Empezando</h1>
+            <h1 className="text-white mx-2">
+                {!resume ? "Empezando" : "Resumiendo"}
+            </h1>
             <div className="loader">
                 <div className="bar6"></div>
                 <div className="bar5"></div>
@@ -30,7 +38,7 @@ const Loader = () => {
 };
 
 const Counter: React.FC<Props> = (props) => {
-    const { seconds } = props;
+    const { seconds, resume } = props;
     const radius = 75;
     const circumference = radius * 2 * Math.PI;
     const [offset, setOffset] = React.useState<number>(circumference);
@@ -93,7 +101,7 @@ const Counter: React.FC<Props> = (props) => {
         );
     };
 
-    return <>{!showLoader ? progressRing() : <Loader />}</>;
+    return <>{!showLoader ? progressRing() : <Loader resume={resume} />}</>;
 };
 
 export default Counter;
